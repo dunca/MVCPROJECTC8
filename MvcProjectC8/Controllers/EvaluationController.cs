@@ -13,7 +13,7 @@ namespace MvcProjectC8.Controllers
         {
             new ProjectEvaluation() { Name = "John Doe", City = "Cluj-Napoca", Country = "Romania", Rating = 5 },
             new ProjectEvaluation() { Name = "Maria Enescu", City = "Sibiu", Country = "Romania", Rating = 5 },
-            new ProjectEvaluation() { Name = "George Popescu", City = "Iasi", Country = "Romania", Rating = 5 }
+            new ProjectEvaluation() { Name = "George Popescu", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5 }
         };
 
         // GET: Evaluation
