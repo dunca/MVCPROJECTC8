@@ -239,6 +239,7 @@
     <Content Include="Views\Evaluation\Index.cshtml" />
     <Content Include="Views\Evaluation\EvaluationLayout.cshtml" />
     <Content Include="Views\Evaluation\Edit.cshtml" />
+    <Content Include="Views\Evaluation\_Evaluation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
