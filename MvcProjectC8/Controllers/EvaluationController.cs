@@ -53,7 +53,6 @@ namespace MvcProjectC8.Controllers
         // GET: Evaluation/Edit/5
         public ActionResult Edit(int id)
         {
-            var evaluation = projectEvaluationList.Single(e => e.Id == id);
             return View();
         }
 
@@ -61,16 +60,24 @@ namespace MvcProjectC8.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add update logic here
+            //try
+            //{
+            //    // TODO: Add update logic here
 
+            //    return RedirectToAction("Index");
+            //}
+            //catch
+            //{
+            //    return View();
+            //}
+
+            var evaluation = projectEvaluationList.Single(e => e.Id == id);
+
+            if (TryUpdateModel(evaluation))
+            {
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(evaluation);
         }
 
         // GET: Evaluation/Delete/5
