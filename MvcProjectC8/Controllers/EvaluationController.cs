@@ -11,9 +11,9 @@ namespace MvcProjectC8.Controllers
     {
         static List<ProjectEvaluation> projectEvaluationList = new List<ProjectEvaluation>()
         {
-            new ProjectEvaluation() { Name = "John Doe", City = "Cluj-Napoca", Country = "Romania", Rating = 5 },
-            new ProjectEvaluation() { Name = "Maria Enescu", City = "Sibiu", Country = "Romania", Rating = 5 },
-            new ProjectEvaluation() { Name = "George Popescu", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5 }
+            new ProjectEvaluation() { Name = "John Doe", City = "Cluj-Napoca", Country = "Romania", Rating = 5, Id = 1 },
+            new ProjectEvaluation() { Name = "Maria Enescu", City = "Sibiu", Country = "Romania", Rating = 5, Id = 2 },
+            new ProjectEvaluation() { Name = "George Popescu", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 3 }
         };
 
         // GET: Evaluation
@@ -53,6 +53,7 @@ namespace MvcProjectC8.Controllers
         // GET: Evaluation/Edit/5
         public ActionResult Edit(int id)
         {
+            var evaluation = projectEvaluationList.Single(e => e.Id == id);
             return View();
         }
 
