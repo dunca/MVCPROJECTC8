@@ -9,7 +9,7 @@ using System.Web.Mvc;
 namespace MvcProjectC8.Models
 {
     [Bind(Exclude = "Country")]
-    public class ProjectEvaluation
+    public class ProjectEvaluation : IValidatableObject
     {
         public int Id { get; set; }
 
@@ -25,5 +25,13 @@ namespace MvcProjectC8.Models
         [Required]
         [Range(1, 10)]
         public int Rating { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validatonContext)
+        {
+            if (Rating < 2 && Name.ToLower().StartsWith("john"))
+            {
+                yield return new ValidationResult("Sorry John, you can’t do this");
+            }
+        }
     }
 }
