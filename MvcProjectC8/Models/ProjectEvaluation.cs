@@ -19,7 +19,9 @@ namespace MvcProjectC8.Models
         [Required]
         [StringLength(1000)]
         [Display(Name = "User's city name")]
+        [CityLimit(new string[] { "Cluj-Napoca", "Sibiu", "Targu-Mures", "Brasov" })]
         public string City { get; set; }
+
         public string Country { get; set; }
 
         [Required]
