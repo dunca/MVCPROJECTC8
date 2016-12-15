@@ -11,6 +11,9 @@ namespace MvcProjectC8.Models
     [Bind(Exclude = "Country")]
     public class ProjectEvaluation : IValidatableObject
     {
+        const string partiallyBannedLastName = "Popa";
+        const string partiallyBannedCityName = "Sibiu";
+
         public int Id { get; set; }
 
         [MaxWords(3)]
@@ -28,11 +31,19 @@ namespace MvcProjectC8.Models
         [Range(1, 10)]
         public int Rating { get; set; }
 
+        //public IEnumerable<ValidationResult> Validate(ValidationContext validatonContext)
+        //{
+        //    if (Rating < 2 && Name.ToLower().StartsWith("john"))
+        //    {
+        //        yield return new ValidationResult("Sorry John, you can’t do this");
+        //    }
+        //}
+
         public IEnumerable<ValidationResult> Validate(ValidationContext validatonContext)
         {
-            if (Rating < 2 && Name.ToLower().StartsWith("john"))
+            if (Name == partiallyBannedLastName && City == partiallyBannedCityName)
             {
-                yield return new ValidationResult("Sorry John, you can’t do this");
+                yield return new ValidationResult($"People from {partiallyBannedCityName} named {partiallyBannedLastName} cannot use the rating feature!!!");
             }
         }
     }
