@@ -15,6 +15,7 @@ namespace MvcProjectC8.Models
 
         [Required]
         [StringLength(1000)]
+        [Display(Name = "User's city name")]
         public string City { get; set; }
         public string Country { get; set; }
 
