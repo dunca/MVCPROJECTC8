@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcProjectC8.CustomAttributes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace MvcProjectC8.Models
     public class ProjectEvaluation
     {
         public int Id { get; set; }
+
+        [MaxWords(3)]
         public string Name { get; set; }
 
         [Required]
