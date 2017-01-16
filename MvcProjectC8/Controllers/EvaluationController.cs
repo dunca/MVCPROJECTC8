@@ -13,12 +13,30 @@ namespace MvcProjectC8.Controllers
         {
             new ProjectEvaluation() { Name = "John Doe", City = "Cluj-Napoca", Country = "Romania", Rating = 5, Id = 1 },
             new ProjectEvaluation() { Name = "Maria Enescu", City = "Sibiu", Country = "Romania", Rating = 5, Id = 2 },
-            new ProjectEvaluation() { Name = "George Popescu", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 3 }
+            new ProjectEvaluation() { Name = "George Popescu", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 3 },
+            new ProjectEvaluation() { Name = "John Doez", City = "Cluj-Napoca", Country = "Romania", Rating = 5, Id = 1 },
+            new ProjectEvaluation() { Name = "Maria Enescuz", City = "Sibiu", Country = "Romania", Rating = 5, Id = 2 },
+            new ProjectEvaluation() { Name = "George Popescuz", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 3 },
+            new ProjectEvaluation() { Name = "John Does", City = "Cluj-Napoca", Country = "Romania", Rating = 5, Id = 1 },
+            new ProjectEvaluation() { Name = "Maria Enescu Popescu", City = "Sibiu", Country = "Romania", Rating = 5, Id = 2 },
+            new ProjectEvaluation() { Name = "George Popescu Ionescu", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 3 },
+            new ProjectEvaluation() { Name = "John Doescu", City = "Cluj-Napoca", Country = "Romania", Rating = 5, Id = 1 },
+            new ProjectEvaluation() { Name = "Maria Enescu Lucescu", City = "Sibiu", Country = "Romania", Rating = 5, Id = 2 },
+            new ProjectEvaluation() { Name = "George Popescu Ciumescu", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 3 }
         };
 
         // GET: Evaluation
-        public ActionResult Index()
+        public ActionResult Index(string searchTerm = null)
         {
+            if (searchTerm != null)
+            {
+                var lowerSearchTerm = searchTerm.ToLower();
+                var model = projectEvaluationList.Where(p => p.Name.ToLower().StartsWith(lowerSearchTerm))
+                .Take(10);
+
+                return View(model);
+            }
+
             return View(projectEvaluationList);
         }
 
