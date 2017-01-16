@@ -26,6 +26,12 @@ namespace MvcProjectC8
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/pm").Include(
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery-unobtrusive*",
+                        "~/Scripts/jquery.validate*",
+                        "~/Scripts/projectmanagement.js"));
         }
     }
 }
