@@ -14,15 +14,15 @@ namespace MvcProjectC8.Controllers
             new ProjectEvaluation() { Name = "John Doe", City = "Cluj-Napoca", Country = "Romania", Rating = 5, Id = 1 },
             new ProjectEvaluation() { Name = "Maria Enescu", City = "Sibiu", Country = "Romania", Rating = 5, Id = 2 },
             new ProjectEvaluation() { Name = "George Popescu", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 3 },
-            new ProjectEvaluation() { Name = "John Doez", City = "Cluj-Napoca", Country = "Romania", Rating = 5, Id = 1 },
-            new ProjectEvaluation() { Name = "Maria Enescuz", City = "Sibiu", Country = "Romania", Rating = 5, Id = 2 },
-            new ProjectEvaluation() { Name = "George Popescuz", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 3 },
-            new ProjectEvaluation() { Name = "John Does", City = "Cluj-Napoca", Country = "Romania", Rating = 5, Id = 1 },
-            new ProjectEvaluation() { Name = "Maria Enescu Popescu", City = "Sibiu", Country = "Romania", Rating = 5, Id = 2 },
-            new ProjectEvaluation() { Name = "George Popescu Ionescu", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 3 },
-            new ProjectEvaluation() { Name = "John Doescu", City = "Cluj-Napoca", Country = "Romania", Rating = 5, Id = 1 },
-            new ProjectEvaluation() { Name = "Maria Enescu Lucescu", City = "Sibiu", Country = "Romania", Rating = 5, Id = 2 },
-            new ProjectEvaluation() { Name = "George Popescu Ciumescu", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 3 }
+            new ProjectEvaluation() { Name = "John Doez", City = "Cluj-Napoca", Country = "Romania", Rating = 5, Id = 4 },
+            new ProjectEvaluation() { Name = "Maria Enescuz", City = "Sibiu", Country = "Romania", Rating = 5, Id = 5 },
+            new ProjectEvaluation() { Name = "George Popescuz", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 6 },
+            new ProjectEvaluation() { Name = "John Does", City = "Cluj-Napoca", Country = "Romania", Rating = 5, Id = 7 },
+            new ProjectEvaluation() { Name = "Maria Enescu Popescu", City = "Sibiu", Country = "Romania", Rating = 5, Id = 8 },
+            new ProjectEvaluation() { Name = "George Popescu Ionescu", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 9 },
+            new ProjectEvaluation() { Name = "John Doescu", City = "Cluj-Napoca", Country = "Romania", Rating = 5, Id = 10 },
+            new ProjectEvaluation() { Name = "Maria Enescu Lucescu", City = "Sibiu", Country = "Romania", Rating = 5, Id = 11 },
+            new ProjectEvaluation() { Name = "George Popescu Ciumescu", City = "<script>alert('xss');</script>", Country = "Romania", Rating = 5, Id = 12 }
         };
 
         // GET: Evaluation
